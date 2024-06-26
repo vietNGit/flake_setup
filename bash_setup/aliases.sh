@@ -1,8 +1,14 @@
 #!/bin/sh
 
+alias show_bash="cat ~/.bashrc"
 alias re_source="source ~/.bashrc"
+
+# Nixos channels aliases
 alias mod_nix="sudo nano /etc/nixos/configuration.nix"
 alias nix_reload="sudo nixos-rebuild switch"
 alias nix_upgrade="sudo nixos-rebuild switch --upgrade"
 alias nix_full_update="echo 'Update channel and upgrade packages' && sudo nix-channel --update && sudo nixos-rebuild switch --upgrade"
-alias show_bash="cat ~/.bashrc"
+
+# Nixos flakes aliases
+alias flake_update="nix flake update ~/flake_setup"
+alias flake_rebuild="sudo nixos-rebuild switch --flake ~/flake_setup"
