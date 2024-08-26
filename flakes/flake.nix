@@ -8,14 +8,15 @@
 		};
 	};
 
-	outputs = { self, nixpkgs, ... } :
+	outputs = { self, nixpkgs, ... }@inputs :
 		let
 			lib = nixpkgs.lib;
 		in {
 			nixosConfigurations = {
-				*hostname-here* = lib.nixosSystem {
+				lenovoLaptop = lib.nixosSystem {
 					system = "x86_64-linux";
-					modules = [ /etc/nixos/configuration.nix ];
+					specialArgs = inputs;
+					modules = [ ./hosts/laptop/configuration.nix ];
 				};
 			};
 		};
