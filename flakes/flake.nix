@@ -13,7 +13,7 @@
 			lib = nixpkgs.lib;
 		in {
 			nixosConfigurations = {
-				lenovoLaptop = lib.nixosSystem {
+				nixosLaptop = lib.nixosSystem {
 					system = "x86_64-linux";
 					specialArgs = inputs;
 					modules = [ ./hosts/laptop/configuration.nix ];
