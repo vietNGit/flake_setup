@@ -71,6 +71,7 @@
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
+  services.system-config-printer.enable = true;
 
   # Enable bluetooth on startup
   hardware = {
