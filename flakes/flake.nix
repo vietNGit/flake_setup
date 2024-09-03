@@ -23,7 +23,7 @@
 					};
 					modules = [
 						./hosts/laptop/configuration.nix
-						./modules/unstable-pkgs
+						./modules/unstable-pkgs.nix
 					];
 				};
 			};
