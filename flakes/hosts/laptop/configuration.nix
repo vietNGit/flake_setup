@@ -105,7 +105,7 @@
   users.users.viet = {
     isNormalUser = true;
     description = "viet";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "vboxusers" ];
     packages = with pkgs; [];
   };
 

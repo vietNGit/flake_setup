@@ -30,9 +30,9 @@
 					modules = [
 						./hosts/laptop/configuration.nix
 						./modules/unstable-pkgs.nix
+						./modules/virtualbox.nix
 					];
 				};
 			};
 		};
-
 }
