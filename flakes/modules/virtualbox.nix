@@ -6,6 +6,7 @@
       host = {
         enable = true;
         package = pkgs.virtualbox;
+        enableExtensionPack = true;
       };
       guest.enable = true;
     };
