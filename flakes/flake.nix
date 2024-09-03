@@ -21,7 +21,10 @@
 						inherit inputs;
 						inherit pkgs-unstable;
 					};
-					modules = [ ./hosts/laptop/configuration.nix ];
+					modules = [
+						./hosts/laptop/configuration.nix
+						./modules/unstable-pkgs
+					];
 				};
 			};
 		};
