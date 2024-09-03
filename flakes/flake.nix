@@ -11,8 +11,14 @@
 		let
 			system = "x86_64-linux";
 			lib = nixpkgs.lib;
-			pkgs = nixpkgs.legacyPackages.${system};
-			pkgs-unstable = nixpkgs-unstable.legacyPackages.${system};
+			pkgs = import nixpkgs {
+				system = "x86_64-linux";
+				config.allowUnfree = true;
+			};
+			pkgs-unstable = import nixpkgs-unstable {
+				system = "x86_64-linux";
+				config.allowUnfree = true;
+			};
 		in {
 			nixosConfigurations = {
 				nixosLaptop = lib.nixosSystem {
