@@ -124,7 +124,6 @@
     htop
     cbonsai
 
-    vscode
     kate
     git
     direnv
