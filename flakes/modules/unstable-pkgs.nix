@@ -5,5 +5,7 @@
     vscode
     appflowy
     affine
+    postman
+    libreoffice-fresh
   ];
 }
