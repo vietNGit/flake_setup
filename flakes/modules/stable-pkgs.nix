@@ -7,6 +7,8 @@
     htop
     cbonsai
 
+    brave
+
     kate
     git
     direnv

@@ -2,7 +2,6 @@
 
 {
   environment.systemPackages = with pkgs-unstable; [
-    brave
     firefox
     google-chrome
 
