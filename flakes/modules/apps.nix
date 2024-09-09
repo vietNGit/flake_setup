@@ -38,6 +38,5 @@
     affine
     postman
     libreoffice-fresh
-    multipass
   ]);
 }
