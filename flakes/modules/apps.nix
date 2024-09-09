@@ -1,6 +1,11 @@
 { config, pkgs, pkgs-unstable, ... }:
 
 {
+  virtualization.multipass = {
+    enable = true;
+    package = pkgs-unstable.multipass;
+  };
+
   environment.systemPackages = (with pkgs; [
     vim
     tree
