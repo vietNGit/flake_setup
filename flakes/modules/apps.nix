@@ -1,7 +1,7 @@
 { config, pkgs, pkgs-unstable, ... }:
 
 {
-  virtualization.multipass = {
+  virtualisation.multipass = {
     enable = true;
     package = pkgs-unstable.multipass;
   };
