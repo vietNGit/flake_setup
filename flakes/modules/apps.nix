@@ -6,6 +6,8 @@
     package = pkgs-unstable.multipass;
   };
 
+  services.flatpak.enable = true;
+
   environment.systemPackages = (with pkgs; [
     vim
     tree
