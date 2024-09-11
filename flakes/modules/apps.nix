@@ -9,6 +9,7 @@
         logitech-udev-rules
       ];
     };
+    ratbagd.enable = true;
   };
 
   environment.systemPackages = (with pkgs; [
@@ -34,6 +35,8 @@
     ibus-engines.bamboo
     ibus-engines.libpinyin
 
+    piper
+    libratbag
     solaar
     logitech-udev-rules
   ])
