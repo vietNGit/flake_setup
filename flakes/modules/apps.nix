@@ -1,12 +1,15 @@
 { config, pkgs, pkgs-unstable, ... }:
 
 {
-  virtualisation.multipass = {
-    enable = true;
-    package = pkgs-unstable.multipass;
+  services = {
+    flatpak.enable = true;
+    udev = {
+      enable = true;
+      packages = with pkgs; [
+        logitech-udev-rules
+      ];
+    };
   };
-
-  services.flatpak.enable = true;
 
   environment.systemPackages = (with pkgs; [
     vim
@@ -30,6 +33,9 @@
 
     ibus-engines.bamboo
     ibus-engines.libpinyin
+
+    solaar
+    logitech-udev-rules
   ])
   ++ (with pkgs-unstable;[
     firefox
