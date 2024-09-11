@@ -2,13 +2,15 @@
 
 {
   virtualisation = {
+    libvirtd.enable = true;
     virtualbox = {
       host = {
         enable = true;
-        package = pkgs.virtualbox;
         enableExtensionPack = true;
       };
       guest.enable = true;
     };
   };
+
+  programs.virt-manager.enable = true;
 }

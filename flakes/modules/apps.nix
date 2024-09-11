@@ -39,6 +39,11 @@
     libratbag
     solaar
     logitech-udev-rules
+
+    qemu
+    quickemu
+    virt-manager
+    virtualbox
   ])
   ++ (with pkgs-unstable;[
     firefox

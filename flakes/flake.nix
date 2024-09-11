@@ -29,7 +29,7 @@
 					};
 					modules = [
 						./hosts/laptop/configuration.nix
-						./modules/virtualbox.nix
+						./modules/virt-machine.nix
 						./modules/apps.nix
 					];
 				};
