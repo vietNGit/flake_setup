@@ -39,6 +39,8 @@
     libratbag
     solaar
     logitech-udev-rules
+    busybox
+    fwupd
 
     qemu
     quickemu
