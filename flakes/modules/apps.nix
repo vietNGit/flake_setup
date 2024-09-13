@@ -50,9 +50,11 @@
     google-chrome
 
     vscode
+    jetbrains.idea-community
+    postman
+
     appflowy
     affine
-    postman
     libreoffice-fresh
   ]);
 }
