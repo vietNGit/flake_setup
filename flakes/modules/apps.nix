@@ -17,6 +17,7 @@
     tree
     htop
     cbonsai
+    clinfo
 
     brave
 

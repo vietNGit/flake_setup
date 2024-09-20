@@ -23,6 +23,9 @@
     enable = true;
     driSupport = true;
     driSupport32Bit = true;
+    extraPackages = with pkgs;[
+      amdvlk
+    ];
   };
 
   # Configure network proxy if necessary
@@ -88,6 +91,11 @@
     bluetooth = {
       enable = true;
       powerOnBoot = true;
+      settings = {
+        General = {
+          Enable = "Source,Sink,Media,Socket";
+        };
+      };
     };
   };
 
