@@ -9,14 +9,16 @@
         logitech-udev-rules
       ];
     };
-    ratbagd.enable = true;
   };
 
   environment.systemPackages = (with pkgs; [
     vim
+    kitty
     tree
     htop
     cbonsai
+    sl
+    cowsay
     clinfo
 
     brave
@@ -36,8 +38,6 @@
     ibus-engines.bamboo
     ibus-engines.libpinyin
 
-    piper
-    libratbag
     solaar
     logitech-udev-rules
     busybox

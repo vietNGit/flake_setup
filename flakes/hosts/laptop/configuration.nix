@@ -41,7 +41,7 @@
   };
 
   # Set your time zone.
-  time.timeZone = "Asia/Ho_Chi_Minh";
+  services.automatic-timezoned.enable = true;
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_AU.UTF-8";
