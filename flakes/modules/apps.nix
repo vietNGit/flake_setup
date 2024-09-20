@@ -52,6 +52,7 @@
     firefox
     google-chrome
 
+    fastfetch
     vscode
     jetbrains.idea-community
     postman
