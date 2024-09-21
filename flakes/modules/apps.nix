@@ -52,6 +52,8 @@
     firefox
     google-chrome
 
+    mullvad
+
     fastfetch
     vscode
     jetbrains.idea-community
