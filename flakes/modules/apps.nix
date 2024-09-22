@@ -52,7 +52,7 @@
     firefox
     google-chrome
 
-    mullvad
+    mullvad-vpn
 
     fastfetch
     vscode
