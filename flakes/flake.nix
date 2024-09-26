@@ -6,23 +6,42 @@
 		nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 	};
 
-	outputs = { self, nixpkgs, nixpkgs-unstable, ... }@inputs : {
+	outputs = { self, nixpkgs, nixpkgs-unstable, ... }@inputs :
+	let
+		systemSettings = {
+			system = "x86_64-linux";
+		};
+		lib = nixpkgs.lib;
+
+		pkgs = import inputs.nixpkgs {
+			system = systemSettings.system;
+			config = {
+				allowUnfree = true;
+				allowUnfreePredicate = (_: true);
+			};
+		};
+
+		pkgs-unstable = import inputs.nixpkgs-unstable {
+			system = systemSettings.system;
+			config = {
+				allowUnfree = true;
+				allowUnfreePredicate = (_: true);
+			};
+		};
+	in {
 		nixosConfigurations = {
 			nixosLaptop = nixpkgs.lib.nixosSystem rec {
-				system = "x86_64-linux";
+				system = systemSettings.system;
 
 				specialArgs = {
-					pkgs = import nixpkgs {
-						inherit system;
+					# pass config variables from above
+					inherit pkgs;
+					inherit pkgs-unstable;
 
-						config.allowUnfree = true;
-					};
-					pkgs-unstable = import nixpkgs-unstable {
-						inherit system;
-
-						config.allowUnfree = true;
-					};
+					inherit systemSettings;
+					inherit inputs;
 				};
+
 
 				modules = [
 					./hosts/laptop/configuration.nix
