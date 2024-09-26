@@ -15,7 +15,7 @@
         package = pkgs-unstable.mullvad;
       };
     };
-    environment.systemPackages = (with pkgs; [
+    environment.systemPackages = with pkgs; [
       vim
       kitty
       tree
@@ -49,19 +49,6 @@
       quickemu
       virt-manager
       virtualbox
-    ])
-    ++ (with pkgs-unstable;[
-      firefox
-      google-chrome
-
-      fastfetch
-      vscode
-      jetbrains.idea-community
-      postman
-
-      appflowy
-      affine
-      libreoffice-fresh
-    ]);
+    ];
   };
 }

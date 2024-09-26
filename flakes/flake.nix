@@ -47,6 +47,7 @@
 					./hosts/laptop/configuration.nix
 					./modules/virt-machine.nix
 					./modules/apps.nix
+					./modules/unstable.nix
 					./modules/gaming.nix
 				];
 			};
