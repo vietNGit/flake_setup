@@ -1,6 +1,11 @@
 { config, lib, pkgs, pkgs-unstable, ... }:
 
 {
+  _module.args.pkgs-unstable = import pkgs-unstable {
+    inherit (pkgs.stdenv.hostPlatform) system;
+    inherit (config.nixpkgs) config;
+  };
+
   services = {
     flatpak.enable = true;
     udev = {
