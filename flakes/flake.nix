@@ -1,5 +1,4 @@
 {
-
 	description = "Lenovo laptop setup";
 
 	inputs = {
@@ -7,33 +6,31 @@
 		nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 	};
 
-	outputs = { self, nixpkgs, nixpkgs-unstable, ... }@inputs :
-		let
-			system = "x86_64-linux";
-			lib = nixpkgs.lib;
-			pkgs = import nixpkgs {
+	outputs = { self, nixpkgs, nixpkgs-unstable, ... }@inputs : {
+		nixosConfigurations = {
+			nixosLaptop = nixpkgs.lib.nixosSystem rec {
 				system = "x86_64-linux";
-				config.allowUnfree = true;
-			};
-			pkgs-unstable = import nixpkgs-unstable {
-				system = "x86_64-linux";
-				config.allowUnfree = true;
-			};
-		in {
-			nixosConfigurations = {
-				nixosLaptop = lib.nixosSystem {
-					inherit system;
-					specialArgs = {
-						inherit inputs;
-						inherit pkgs-unstable;
+
+				specialArgs = {
+					pkgs = import nixpkgs {
+						inherit system;
+
+						config.allowUnfree = true;
 					};
-					modules = [
-						./hosts/laptop/configuration.nix
-						./modules/virt-machine.nix
-						./modules/apps.nix
-						./modules/gaming.nix
-					];
+					pkgs-unstable = import nixpkgs-unstable {
+						inherit system;
+
+						config.allowUnfree = true;
+					};
 				};
+
+				modules = [
+					./hosts/laptop/configuration.nix
+					./modules/virt-machine.nix
+					./modules/apps.nix
+					./modules/gaming.nix
+				];
 			};
 		};
+	};
 }
