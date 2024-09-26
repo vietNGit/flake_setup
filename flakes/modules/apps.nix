@@ -12,7 +12,7 @@
       };
       mullvad-vpn = {
         enable = true;
-        package = pkgs-unstable.mullvad;
+        package = pkgs-unstable.mullvad-vpn;
       };
     };
     environment.systemPackages = with pkgs; [
