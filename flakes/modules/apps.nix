@@ -9,6 +9,10 @@
         logitech-udev-rules
       ];
     };
+    mullvad-vpn = {
+      enable = true;
+      package = pkgs-unstable.mullvad;
+    };
   };
 
   environment.systemPackages = (with pkgs; [
@@ -40,8 +44,6 @@
 
     solaar
     logitech-udev-rules
-    busybox
-    fwupd
 
     qemu
     quickemu
@@ -51,8 +53,6 @@
   ++ (with pkgs-unstable;[
     firefox
     google-chrome
-
-    mullvad-vpn
 
     fastfetch
     vscode
