@@ -62,6 +62,7 @@
       appflowy
       affine
       libreoffice-fresh
+      wpsoffice
     ]);
   };
 }
