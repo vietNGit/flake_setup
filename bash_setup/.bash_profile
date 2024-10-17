@@ -12,3 +12,16 @@ PS1='$_BOLD${_CYAN}\D{%d-%m-%y} ${_RED} \u@\H:\w $_RESET\n$_BOLD$_GREEN\$ '
 # New line after every command ran, except first prompt
 # PROMPT_COMMAND="export PROMPT_COMMAND=echo"
 # alias clear="unset PROMPT_COMMAND; clear; PROMPT_COMMAND='export PROMPT_COMMAND=echo'"
+
+flake_system_update() {
+  cd ~/flake_setup/flakes
+  flake_update .
+  if [[ `git status --porcelain` ]]; then
+    git add .
+    git commit -a -m "Update lock"
+    git push origin HEAD
+    flake_rebuild .
+  else
+    echo "No changes"
+  fi
+}
