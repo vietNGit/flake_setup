@@ -31,6 +31,7 @@
       git
       direnv
       remmina
+      cloudflare-warp
 
       libsForQt5.kmines
       libsForQt5.kmahjongg
