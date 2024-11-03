@@ -11,12 +11,16 @@ flake_system_update() {
   cd ~/flake_setup/flakes
   flake_update .
   if [[ `git status --porcelain` ]]; then
-    echo "Changes confirmed, perform git commit and flake system rebuild"
+    printf "=================================================================\n"
+    printf "Changes confirmed, perform git commit and flake system rebuild \n"
+    printf "=================================================================\n"
     git add .
     git commit -a -m "Update lock"
     git push origin HEAD
     flake_rebuild .
   else
-    echo "No changes"
+    printf "=================================================================\n"
+    printf "No changes \n"
+    printf "=================================================================\n"
   fi
 }
