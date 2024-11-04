@@ -32,6 +32,7 @@
       direnv
       remmina
       cloudflare-warp
+      zoom-us
 
       libsForQt5.kmines
       libsForQt5.kmahjongg
