@@ -15,6 +15,10 @@
         package = pkgs-unstable.mullvad-vpn;
       };
     };
+
+    systemd.packages = [ pkgs.cloudflare-warp ]; # for warp-cli
+    systemd.targets.multi-user.wants = [ "warp-svc.service" ];
+
     environment.systemPackages = (with pkgs; [
       vim
       kitty
