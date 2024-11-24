@@ -38,6 +38,7 @@
       cloudflare-warp
       zoom-us
       duplicati
+      vlc
 
       libsForQt5.kmines
       libsForQt5.kmahjongg
