@@ -37,6 +37,7 @@
       remmina
       cloudflare-warp
       zoom-us
+      duplicati
 
       libsForQt5.kmines
       libsForQt5.kmahjongg
