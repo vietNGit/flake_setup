@@ -94,7 +94,10 @@
   };
 
   # Enable CUPS to print documents.
-  services.printing.enable = true;
+  services.printing = {
+    enable = true;
+    drivers = with pkgs; [ canon-cups-ufr2 ]
+  };
   services.system-config-printer.enable = true;
 
   # Enable bluetooth on startup
