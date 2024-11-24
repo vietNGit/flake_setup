@@ -40,6 +40,8 @@
       duplicati
       vlc
 
+      canon-cups-ufr2
+
       libsForQt5.kmines
       libsForQt5.kmahjongg
       libsForQt5.kpat
