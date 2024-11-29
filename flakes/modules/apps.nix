@@ -59,6 +59,9 @@
       quickemu
       virt-manager
       virtualbox
+
+      docker
+      docker-compose
     ])
     ++ (with pkgs-unstable; [
       firefox

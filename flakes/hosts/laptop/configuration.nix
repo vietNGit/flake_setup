@@ -137,7 +137,7 @@
   users.users.viet = {
     isNormalUser = true;
     description = "viet";
-    extraGroups = [ "networkmanager" "wheel" "vboxusers" "libvirtd" "docker "];
+    extraGroups = [ "networkmanager" "wheel" "vboxusers" "libvirtd" "docker" ];
     packages = with pkgs; [];
   };
 
