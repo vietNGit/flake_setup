@@ -48,6 +48,7 @@
       libsForQt5.kcalendarcore
       libsForQt5.kamoso
       libsForQt5.networkmanager-qt
+      libsForQt5.plasma-pa
 
       ibus-engines.bamboo
       ibus-engines.libpinyin

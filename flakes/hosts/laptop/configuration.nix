@@ -19,10 +19,9 @@
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # OpenGL setup
-  hardware.opengl = {
+  hardware.graphics = {
     enable = true;
-    driSupport = true;
-    driSupport32Bit = true;
+    enable32Bit = true;
     extraPackages = with pkgs;[
       amdvlk
     ];
@@ -71,7 +70,8 @@
 
   # Vietnamese typing setup
   i18n.inputMethod = {
-    enabled = "ibus";
+    enable = true;
+    type = "ibus";
     ibus.engines = with pkgs.ibus-engines; [ bamboo libpinyin ];
   };
 
@@ -114,13 +114,15 @@
   };
 
   # Enable sound with pipewire.
-  sound.enable = true;
-  hardware.pulseaudio.enable = false;
+  # hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
+    audio.enable = true;
+    alsa = {
+      enable = true;
+      support32Bit = true;
+    };
     pulse.enable = true;
     # If you want to use JACK applications, uncomment this
     #jack.enable = true;
