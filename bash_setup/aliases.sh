@@ -10,7 +10,7 @@ alias nix_upgrade="sudo nixos-rebuild switch --upgrade"
 alias nix_full_update="echo 'Update channel and upgrade packages' && sudo nix-channel --update && sudo nixos-rebuild switch --upgrade"
 
 # Nixos flakes aliases
-alias flake_update="sudo nix flake update"
+alias flake_update="nix flake update"
 alias flake_rebuild="sudo nixos-rebuild switch --flake"
 
 # General aliases
