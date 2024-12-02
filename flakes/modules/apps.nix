@@ -22,23 +22,30 @@
     environment.systemPackages = with pkgs; [
       vim
       kitty
+      warp-terminal
       tree
       htop
       cbonsai
       sl
       cowsay
       clinfo
+      fastfetch
 
       brave
+      firefox
+      google-chrome
 
       kate
       git
       direnv
       remmina
       cloudflare-warp
-      zoom-us
       duplicati
-      vlc
+      docker
+      docker-compose
+      vscode
+      jetbrains.idea-community
+      postman
 
       canon-cups-ufr2
 
@@ -61,17 +68,8 @@
       virt-manager
       virtualbox
 
-      docker
-      docker-compose
-
-      firefox
-      google-chrome
-
-      fastfetch
-      vscode
-      jetbrains.idea-community
-      postman
-
+      zoom-us
+      vlc
       appflowy
       affine
       libreoffice
