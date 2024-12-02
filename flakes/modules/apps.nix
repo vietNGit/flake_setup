@@ -55,6 +55,7 @@
       solaar
       logitech-udev-rules
       firewalld-gui
+      systemd
 
       qemu
       quickemu
