@@ -19,7 +19,7 @@
     systemd.packages = [ pkgs.cloudflare-warp ]; # for warp-cli
     systemd.targets.multi-user.wants = [ "warp-svc.service" ];
 
-    environment.systemPackages = with pkgs; [
+    environment.systemPackages = (with pkgs; [
       vim
       kitty
       warp-terminal
@@ -49,19 +49,12 @@
 
       canon-cups-ufr2
 
-      libsForQt5.kmines
-      libsForQt5.kmahjongg
-      libsForQt5.kpat
-      libsForQt5.kcalendarcore
-      libsForQt5.kamoso
-      libsForQt5.networkmanager-qt
-      libsForQt5.plasma-pa
-
       ibus-engines.bamboo
       ibus-engines.libpinyin
 
       solaar
       logitech-udev-rules
+      # firewalld-gui
 
       qemu
       quickemu
@@ -74,6 +67,15 @@
       affine
       libreoffice
       wpsoffice
-    ];
+    ]) ++ (with pkgs.libsForQt5; [
+      kmines
+      kmahjongg
+      kpat
+      kcalendarcore
+      kamoso
+      networkmanager-qt
+      plasma-pa
+      plasma-firewall
+    ]);
   };
 }
