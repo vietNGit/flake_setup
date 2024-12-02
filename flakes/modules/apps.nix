@@ -54,7 +54,7 @@
 
       solaar
       logitech-udev-rules
-      # firewalld-gui
+      firewalld-gui
 
       qemu
       quickemu
