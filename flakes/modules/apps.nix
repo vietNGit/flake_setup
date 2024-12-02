@@ -1,4 +1,4 @@
-{ config, lib, pkgs, pkgs-unstable, ... }:
+{ config, lib, pkgs, pkgs-stable, ... }:
 
 {
   config = {
@@ -12,14 +12,14 @@
       };
       mullvad-vpn = {
         enable = true;
-        package = pkgs-unstable.mullvad-vpn;
+        package = pkgs.mullvad-vpn;
       };
     };
 
     systemd.packages = [ pkgs.cloudflare-warp ]; # for warp-cli
     systemd.targets.multi-user.wants = [ "warp-svc.service" ];
 
-    environment.systemPackages = (with pkgs; [
+    environment.systemPackages = with pkgs; [
       vim
       kitty
       tree
@@ -63,8 +63,7 @@
 
       docker
       docker-compose
-    ])
-    ++ (with pkgs-unstable; [
+
       firefox
       google-chrome
 
@@ -77,6 +76,6 @@
       affine
       libreoffice
       wpsoffice
-    ]);
+    ];
   };
 }
