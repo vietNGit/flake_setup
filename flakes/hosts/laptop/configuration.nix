@@ -15,13 +15,14 @@
     systemd-boot.enable = false;
     efi = {
       canTouchEfiVariables = true;
-      efiSysMountPoint = "/boot";
     };
     grub = {
       enable = true;
-      devices = [ "nodev" ];
+      # devices = [ "nodev" ];
+      device = "nodev";
       efiSupport = true;
       useOSProber = true;
+      memtest86.enable = true;
     };
   };
 
