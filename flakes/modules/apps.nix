@@ -30,6 +30,7 @@
       cowsay
       clinfo
       fastfetch
+      grub2
 
       brave
       firefox
@@ -56,6 +57,7 @@
       logitech-udev-rules
       firewalld-gui
       systemd
+      ddcutil
 
       qemu
       quickemu
