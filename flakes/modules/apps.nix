@@ -77,6 +77,7 @@
       networkmanager-qt
       plasma-pa
       plasma-firewall
+      powerdevil
     ]);
   };
 }
