@@ -11,8 +11,18 @@
     ];
 
   # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader = {
+    systemd-boot.enable = false;
+    efi.canTouchEfiVariables = true;
+    grub = {
+      enable = true;
+      devices = [ "nodev" ];
+      efiSupport = true;
+      useOSProber = true;
+    };
+  };
+
+
 
 #   boot.initrd.luks.devices."luks-a25fbd00-e040-43e2-a85f-b272110aba04".device = "/dev/disk/by-uuid/a25fbd00-e040-43e2-a85f-b272110aba04";
   networking.hostName = "nixosLaptop"; # Define your hostname.
