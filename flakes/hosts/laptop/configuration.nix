@@ -23,6 +23,12 @@
       efiSupport = true;
       useOSProber = true;
       memtest86.enable = true;
+      extraEntries = "
+        # UEFI boot entry
+        menuentry 'UEFI Firmware Settings' $menuentry_id_option 'uefi-firmware' {
+          fwsetup
+        }
+      ";
     };
   };
 
