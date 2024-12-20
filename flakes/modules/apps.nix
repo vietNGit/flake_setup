@@ -80,6 +80,8 @@
       plasma-pa
       plasma-firewall
       powerdevil
+      knotifications
+      knotifyconfig
     ]);
   };
 }
