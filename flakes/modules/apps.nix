@@ -58,6 +58,7 @@
       firewalld-gui
       systemd
       ddcutil
+      fan2go
 
       qemu
       quickemu
