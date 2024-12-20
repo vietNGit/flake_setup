@@ -59,6 +59,7 @@
       systemd
       ddcutil
       fan2go
+      lm_sensors
 
       qemu
       quickemu
