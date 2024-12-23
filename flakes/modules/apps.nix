@@ -45,7 +45,7 @@
       docker
       docker-compose
       vscode
-      jetbrains.idea-community
+      # jetbrains.idea-community
       postman
 
       canon-cups-ufr2
