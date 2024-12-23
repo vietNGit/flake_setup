@@ -20,16 +20,18 @@
     systemd.targets.multi-user.wants = [ "warp-svc.service" ];
 
     environment.systemPackages = (with pkgs; [
+      cbonsai
+      snowmachine
+      sl
+      cowsay
+      fastfetch
+
       vim
       kitty
       warp-terminal
       tree
       htop
-      cbonsai
-      sl
-      cowsay
       clinfo
-      fastfetch
       grub2
 
       brave
