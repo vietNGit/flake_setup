@@ -56,6 +56,7 @@
 				modules = [
 					./hosts/laptop/configuration.nix
 					./modules/virt-machine.nix
+					./modules/podman.nix
 					./modules/apps.nix
 					./modules/gaming.nix
 				];

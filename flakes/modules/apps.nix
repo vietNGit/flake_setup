@@ -44,8 +44,6 @@
       remmina
       cloudflare-warp
       duplicati
-      docker
-      docker-compose
       vscode
       # jetbrains.idea-community
       postman
