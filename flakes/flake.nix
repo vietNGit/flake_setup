@@ -2,12 +2,12 @@
 	description = "Lenovo laptop setup";
 
 	inputs = {
-		nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-		nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-24.11";
+		# nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+		nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
 		ibus.url = "github:NixOS/nixpkgs/nixos-24.05";
 	};
 
-	outputs = { self, nixpkgs, nixpkgs-stable, ibus, ... }@inputs :
+	outputs = { self, nixpkgs, ibus, ... }@inputs :
 	let
 		systemSettings = {
 			system = "x86_64-linux";
@@ -29,13 +29,13 @@
       # ];
 		};
 
-		pkgs-stable = import inputs.nixpkgs-stable {
-			system = systemSettings.system;
-			config = {
-				allowUnfree = true;
-				allowUnfreePredicate = (_: true);
-			};
-		};
+		# pkgs-stable = import inputs.nixpkgs-stable {
+		# 	system = systemSettings.system;
+		# 	config = {
+		# 		allowUnfree = true;
+		# 		allowUnfreePredicate = (_: true);
+		# 	};
+		# };
 
 		ibus-pkgs = import inputs.ibus {
 			system = systemSettings.system;
@@ -52,7 +52,7 @@
 				specialArgs = {
 					# pass config variables from above
 					inherit pkgs;
-					inherit pkgs-stable;
+					# inherit pkgs-stable;
 					inherit ibus-pkgs;
 
 					inherit systemSettings;
