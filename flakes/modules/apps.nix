@@ -61,7 +61,7 @@
       fan2go
       lm_sensors
 
-      qemu
+      qemu_full
       quickemu
       virt-manager
       virtualbox

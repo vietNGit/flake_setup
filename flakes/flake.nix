@@ -20,13 +20,13 @@
 				allowUnfree = true;
 				allowUnfreePredicate = (_: true);
 			};
-			# overlays = [
-      #   (final: prev: {
-			# 		sambaFull = prev.sambaFull.override {
-			# 			enableCephFS = false;
-			# 		};
-      #   })
-      # ];
+			overlays = [
+        (final: prev: {
+					qemu_full = prev.qemu_full.override {
+						cephSupport = false;
+					};
+        })
+      ];
 		};
 
 		# pkgs-stable = import inputs.nixpkgs-stable {
