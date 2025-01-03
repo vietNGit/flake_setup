@@ -1,4 +1,4 @@
-{ config, lib, pkgs, pkgs-stable, ... }:
+{ config, lib, pkgs, pkgs-stable ? pkgs-stable : null, ... }:
 
 {
   config = {
@@ -61,8 +61,8 @@
       fan2go
       lm_sensors
 
-      # qemu_full
-      # quickemu
+      qemu_full
+      quickemu
       virt-manager
       virtualbox
 
@@ -85,8 +85,8 @@
       knotifications
       knotifyconfig
     ]) ++ (with pkgs-stable; [
-      qemu_full
-      quickemu
+      # qemu_full
+      # quickemu
     ]);
   };
 }

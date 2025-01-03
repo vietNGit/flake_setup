@@ -1,10 +1,9 @@
-{ config, pkgs, pkgs-stable, ... }:
+{ config, pkgs, pkgs-stable ? pkgs-stable : null, ... }:
 
 {
   programs.steam = {
     enable = true;
     gamescopeSession.enable = true;
-    package = pkgs-stable.steam;
   };
   programs.gamemode.enable = true;
 
