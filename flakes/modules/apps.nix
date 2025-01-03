@@ -61,8 +61,8 @@
       fan2go
       lm_sensors
 
-      qemu_full
-      quickemu
+      # qemu_full
+      # quickemu
       virt-manager
       virtualbox
 
@@ -84,6 +84,9 @@
       powerdevil
       knotifications
       knotifyconfig
+    ]) ++ (with pkgs-stable; [
+      qemu_full
+      quickemu
     ]);
   };
 }
