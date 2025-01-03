@@ -91,12 +91,12 @@
   # Vietnamese typing setup
   i18n.inputMethod = {
     enable = true;
-    type = "fcitx5";
+    type = "ibus";
 
-    fcitx5 = {
-      addons = with pkgs; [ fcitx5-bamboo ];
-    };
-    # ibus.engines = with pkgs.ibus-engines; [ bamboo libpinyin ];
+    # fcitx5 = {
+    #   addons = with pkgs; [ fcitx5-bamboo ];
+    # };
+    ibus.engines = with pkgs.ibus-engines; [ bamboo libpinyin ];
   };
 
   # Enable the X11 windowing system.
