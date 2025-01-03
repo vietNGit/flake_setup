@@ -93,7 +93,7 @@
     enable = true;
     type = "ibus";
 
-    ibus.engines = with ibus-pkgs.ibus-engines; [ bamboo libpinyin ];
+    ibus.engines = with pkgs.ibus-engines; [ bamboo libpinyin ];
   };
 
   # Enable the X11 windowing system.
