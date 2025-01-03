@@ -62,7 +62,7 @@
       lm_sensors
 
       qemu
-      # quickemu
+      quickemu
       virt-manager
       virtualbox
 
