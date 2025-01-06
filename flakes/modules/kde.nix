@@ -14,20 +14,23 @@
       };
 
       # Enable the KDE Plasma Desktop Environment.
-      desktopManager.plasma5.enable = true;
+      desktopManager.plasma5.enable = false;
     };
 
     displayManager = {
       sddm.enable = true;
+      sddm.wayland.enable = true;
     };
+
+    desktopManager.plasma6.enable = true;
   };
 
-  environment.systemPackages = with pkgs.libsForQt5; [
+  environment.systemPackages = with pkgs.kdePackages; [
     kmines
     kmahjongg
     kpat
     kcalendarcore
-    kamoso
+    kamera
     networkmanager-qt
     plasma-pa
     plasma-firewall
