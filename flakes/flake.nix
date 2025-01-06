@@ -60,6 +60,7 @@
 					./modules/podman.nix
 					./modules/apps.nix
 					./modules/gaming.nix
+					./modules/kde.nix
 				];
 			};
 		};

@@ -72,19 +72,6 @@
       affine
       libreoffice
       wpsoffice
-    ]) ++ (with pkgs.libsForQt5; [
-      kmines
-      kmahjongg
-      kpat
-      kcalendarcore
-      kamoso
-      networkmanager-qt
-      plasma-pa
-      plasma-firewall
-      powerdevil
-      knotifications
-      knotifyconfig
-      # fcitx5-with-addons
     ]) ++ (with pkgs-stable; [
       # qemu_full
       # quickemu
