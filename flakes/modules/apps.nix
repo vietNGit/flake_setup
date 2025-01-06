@@ -72,6 +72,8 @@
       affine
       libreoffice
       wpsoffice
+
+      dnf5
     ]) ++ (with pkgs-stable; [
       # qemu_full
       # quickemu
