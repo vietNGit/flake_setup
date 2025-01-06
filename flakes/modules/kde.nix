@@ -25,6 +25,17 @@
     desktopManager.plasma6.enable = true;
   };
 
+  # Vietnamese typing setup
+  i18n.inputMethod = {
+    enable = true;
+    type = "fcitx5";
+
+    fcitx5 = {
+      addons = with pkgs; [ fcitx5-bamboo ];
+    };
+    # ibus.engines = with ibus-pkgs.ibus-engines; [ bamboo libpinyin ];
+  };
+
   environment.systemPackages = with pkgs.kdePackages; [
     kmines
     kmahjongg
