@@ -84,7 +84,7 @@
       powerdevil
       knotifications
       knotifyconfig
-      fcitx5-with-addons
+      # fcitx5-with-addons
     ]) ++ (with pkgs-stable; [
       # qemu_full
       # quickemu
