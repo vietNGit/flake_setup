@@ -96,7 +96,7 @@
     # fcitx5 = {
     #   addons = with pkgs; [ fcitx5-bamboo ];
     # };
-    ibus.engines = with pkgs.ibus-engines; [ bamboo libpinyin ];
+    ibus.engines = with ibus-pkgs.ibus-engines; [ bamboo libpinyin ];
   };
 
   # Enable the X11 windowing system.
