@@ -74,6 +74,7 @@
       wpsoffice
 
       dnf5
+      dnf-plugins-core
     ]) ++ (with pkgs-stable; [
       # qemu_full
       # quickemu
