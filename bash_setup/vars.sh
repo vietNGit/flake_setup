@@ -25,6 +25,6 @@ _RESET=$(tput sgr0)
 _CHOSEN_BG=$(tput setab 241)
 
 export config_file="/etc/nixos/configuration.nix";
-export GTK_IM_MODULE=ibus
-export XMODIFIERS=@im=ibus
-export QT_IM_MODULE=ibus
+# export GTK_IM_MODULE=ibus
+# export XMODIFIERS=@im=ibus
+# export QT_IM_MODULE=ibus

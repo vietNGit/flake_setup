@@ -88,17 +88,6 @@
     LC_TIME = "en_AU.UTF-8";
   };
 
-  # Vietnamese typing setup
-  i18n.inputMethod = {
-    enable = true;
-    type = "ibus";
-
-    # fcitx5 = {
-    #   addons = with pkgs; [ fcitx5-bamboo ];
-    # };
-    ibus.engines = with ibus-pkgs.ibus-engines; [ bamboo libpinyin ];
-  };
-
   # Enable CUPS to print documents.
   services.printing = {
     enable = true;
