@@ -48,6 +48,7 @@
     powerdevil
     knotifications
     knotifyconfig
+    wrapQtAppsHook
     # fcitx5-with-addons
   ];
 }
