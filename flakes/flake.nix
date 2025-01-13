@@ -21,6 +21,15 @@
 				allowUnfree = true;
 				allowUnfreePredicate = (_: true);
 			};
+			overlays = [
+				(final: prev: {
+					vivaldi = prev.vivaldi.overrideAttrs (oldAttrs: {
+						dontWrapQtApps = false;
+						dontPatchELF = true;
+						nativeBuildInputs = oldAttrs.nativeBuildInputs ++ [ pkgs.kdePackages.wrapQtAppsHook ];
+					});
+				})
+			];
 		};
 
 		# pkgs-stable = import inputs.nixpkgs-stable {
