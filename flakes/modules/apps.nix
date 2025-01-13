@@ -37,6 +37,7 @@
       brave
       firefox
       google-chrome
+      vivaldi
 
       kate
       git
