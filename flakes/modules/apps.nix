@@ -67,6 +67,7 @@
       quickemu
       virt-manager
       virtualbox
+      distrobox
 
       zoom-us
       vlc
