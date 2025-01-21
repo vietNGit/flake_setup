@@ -16,3 +16,4 @@ alias flake_rebuild="sudo nixos-rebuild switch --flake"
 # General aliases
 alias ff="fastfetch"
 alias ffa="fastfetch -c all"
+alias dtb="distrobox"
