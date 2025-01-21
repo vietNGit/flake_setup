@@ -17,3 +17,4 @@ alias flake_rebuild="sudo nixos-rebuild switch --flake"
 alias ff="fastfetch"
 alias ffa="fastfetch -c all"
 alias dtb="distrobox"
+alias cat=bat

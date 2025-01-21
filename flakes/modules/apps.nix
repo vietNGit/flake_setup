@@ -33,6 +33,7 @@
       htop
       clinfo
       grub2
+      bat
 
       brave
       firefox
