@@ -34,7 +34,7 @@ flake_system_update() {
     printf "=================================================================\n"
     printf "\n"
     git add .
-    git commit -a -m "Update shell script"
+    git commit -a -m "Update shell script $DATE"
     git push origin HEAD
   else
     printf "\n"
