@@ -10,6 +10,10 @@ PS1='${_RESET}${_BOLD}${_CYAN}\D{%d-%m-%y} ${_RED} \u@\H:\w ${_RESET}\n${_BOLD}$
 
 flake_system_update() {
   cd ~/flake_setup/flakes
+
+  printf "This script require sudo priviledge"
+  sudo echo "Please grant sudo priviledge"
+
   flake_update
   if [[ `git status --porcelain | grep lock` ]]
   then
