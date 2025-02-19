@@ -40,6 +40,7 @@
       google-chrome
       vivaldi
       vivaldi-ffmpeg-codecs
+      vesktop
 
       kate
       git
