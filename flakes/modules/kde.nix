@@ -49,7 +49,7 @@
     knotifications
     knotifyconfig
     wrapQtAppsHook
-    skanlite
+    skanpage
     # fcitx5-with-addons
   ];
 }

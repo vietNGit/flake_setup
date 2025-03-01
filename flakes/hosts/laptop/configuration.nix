@@ -94,6 +94,7 @@
     drivers = with pkgs; [ canon-cups-ufr2 ];
   };
   services.system-config-printer.enable = true;
+  hardware.sane.enable = true;
 
   # Enable bluetooth on startup
   hardware = {
@@ -134,7 +135,9 @@
   users.users.viet = {
     isNormalUser = true;
     description = "viet";
-    extraGroups = [ "networkmanager" "wheel" "vboxusers" "libvirtd" "podman" ];
+    extraGroups = [
+      "networkmanager" "wheel" "vboxusers" "libvirtd" "podman" "scanner" "lp"
+    ];
     packages = with pkgs; [];
   };
 
