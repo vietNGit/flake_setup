@@ -35,11 +35,6 @@
       grub2
       bat
 
-      brave
-      firefox
-      google-chrome
-      vivaldi
-      vivaldi-ffmpeg-codecs
       vesktop
 
       kate

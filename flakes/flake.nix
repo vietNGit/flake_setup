@@ -70,6 +70,7 @@
 					./modules/apps.nix
 					./modules/gaming.nix
 					./modules/kde.nix
+					./modules/browsers.nix
 				];
 			};
 		};
