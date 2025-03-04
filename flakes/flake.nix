@@ -71,6 +71,8 @@
 					./modules/gaming.nix
 					./modules/kde.nix
 					./modules/browsers.nix
+					./modules/bash.nix
+					./modules/fonts.nix
 				];
 			};
 		};
