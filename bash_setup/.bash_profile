@@ -4,9 +4,9 @@ source ~/flake_setup/bash_setup/vars.sh
 source ~/flake_setup/bash_setup/aliases.sh
 
 eval "$(direnv hook bash)"
-export DATE=$(date)
+eval "$(oh-my-posh init bash)"
 
-PS1='${_RESET}${_BOLD}${_CYAN}\D{%d-%m-%y} ${_RED} \u@\H:\w ${_RESET}\n${_BOLD}${_GREEN}\$${_RESET} '
+# PS1='${_RESET}${_BOLD}${_CYAN}\D{%d-%m-%y} ${_RED} \u@\H:\w ${_RESET}\n${_BOLD}${_GREEN}\$${_RESET} '
 
 flake_system_update() {
   cd ~/flake_setup/flakes

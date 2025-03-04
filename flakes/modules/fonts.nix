@@ -10,7 +10,9 @@
     fontconfig = {
       enable = true;
       defaultFonts = {
-        monospace = [ "Meslo LG M Regular Nerd Font Complete Mono" ];
+        monospace = [ "MesloLGM Nerd Font" ];
+        sansSerif = [ "MesloLGM Nerd Font" ];
+        serif = [ "MesloLGM Nerd Font" ];
       };
     };
   };
