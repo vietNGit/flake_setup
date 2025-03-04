@@ -4,7 +4,7 @@ source ~/flake_setup/bash_setup/vars.sh
 source ~/flake_setup/bash_setup/aliases.sh
 
 eval "$(direnv hook bash)"
-eval "$(oh-my-posh init bash)"
+eval "$(oh-my-posh init bash --config ~/flake_setup/omp/personal.omp.yaml)"
 
 # PS1='${_RESET}${_BOLD}${_CYAN}\D{%d-%m-%y} ${_RED} \u@\H:\w ${_RESET}\n${_BOLD}${_GREEN}\$${_RESET} '
 
