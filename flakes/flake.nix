@@ -2,8 +2,8 @@
 	description = "Lenovo laptop setup";
 
 	inputs = {
-		nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-		# nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
+		# nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+		nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
 		# nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-24.11";
 		ibus.url = "github:NixOS/nixpkgs/nixos-24.05";
 	};
