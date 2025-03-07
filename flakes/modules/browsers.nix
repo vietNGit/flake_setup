@@ -11,6 +11,5 @@
     firefox
     mullvad-browser
     tor-browser
-    librewolf
   ];
 }
