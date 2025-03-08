@@ -15,6 +15,10 @@ blocks:
 - type: prompt
   alignment: left
   segments:
+  - type: os
+    style: plain
+    foreground: blue
+    template: "{{.Icon}} "
   - type: root
     style: plain
     template: " % "
