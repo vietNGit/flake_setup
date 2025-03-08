@@ -48,7 +48,7 @@ bash_modified_prtcl() {
 flake_modified_prtcl() {
   focus_print "Checking if flakes and lock added or updated \n"
 
-  need_update = false
+  need_update=false
 
   if [[ `get_modified_flakes` ]]
   then
@@ -58,7 +58,7 @@ flake_modified_prtcl() {
     git commit -a -m "Flakes updated or modified $DATE"
     git push origin HEAD
 
-    need_update = true
+    need_update=true
   fi
 
   if [[ `get_modified_lock` ]]
@@ -69,7 +69,7 @@ flake_modified_prtcl() {
     git commit -a -m "Lock updated $DATE"
     git push origin HEAD
 
-    need_update = true
+    need_update=true
   fi
 
   if [[ "$need_update" = true ]]
