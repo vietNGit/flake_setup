@@ -16,8 +16,13 @@ focus_print() {
   printf "\n"
 }
 
+commit_push() {
+  git commit -m "$1"
+  git push origin HEAD
+}
+
 modified_files() {
-  git status --porcelain | sed s/^...//
+  git status --short | sed s/^...//
 }
 
 get_modified_shell_scripts() {
@@ -40,8 +45,7 @@ bash_modified_prtcl() {
     focus_print "Shell script updated, perform git commit \n"
 
     get_modified_shell_scripts | xargs git add
-    git commit -a -m "Update shell script $DATE"
-    git push origin HEAD
+    commit_push "Update shell script $DATE"
   fi
 }
 
@@ -55,8 +59,7 @@ flake_modified_prtcl() {
     focus_print "Flakes updated \n"
 
     get_modified_shell_scripts | xargs git add
-    git commit -a -m "Flakes updated or modified $DATE"
-    git push origin HEAD
+    commit_push "Flakes updated or modified $DATE"
 
     need_update=true
   fi
@@ -66,8 +69,7 @@ flake_modified_prtcl() {
     focus_print "Lock updated \n"
 
     get_modified_lock | xargs git add
-    git commit -a -m "Lock updated $DATE"
-    git push origin HEAD
+    commit_push "Lock updated $DATE"
 
     need_update=true
   fi
