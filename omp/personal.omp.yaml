@@ -15,10 +15,6 @@ blocks:
 - type: prompt
   alignment: left
   segments:
-  - type: text
-    style: plain
-    template: "# "
-    foreground: lightBlue
   - type: root
     style: plain
     template: " % "
@@ -37,6 +33,22 @@ blocks:
     template: "<darkGray>on</> <white>git:</><cyan>{{ .HEAD }}</>{{ if .Working.Changed }}<red> x</>{{ end }} "
     properties:
       fetch_status: true
+  - type: executiontime
+    style: plain
+    template: " {{ .FormattedMs }} "
+    properties:
+      threshold: 500
+      style: austin
+      always_enabled: true
+    foreground: lightBlue
+  newline: true
+- type: prompt
+  alignment: right
+  segments:
+  - type: shell
+    style: plain
+    template: "{{.Name}} <darkGray>| </>"
+    foreground: magenta
   - type: time
     style: plain
     template: "[{{ .CurrentDate | date .Format }}]"
@@ -45,7 +57,6 @@ blocks:
     style: plain
     template: " C:{{ if gt .Code 0 }}{{ .Code }}{{ end }} "
     foreground: red
-  newline: true
 - type: prompt
   alignment: left
   segments:
