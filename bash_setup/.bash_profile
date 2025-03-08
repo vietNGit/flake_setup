@@ -86,7 +86,7 @@ flake_system_update() {
   cd ~/flake_setup/flakes
 
   focus_print "This script require sudo priviledge \n"
-  sudo focus_print "Sudo priviledge granted"
+  sudo `focus_print "Sudo priviledge granted"`
 
   flake_update
 
