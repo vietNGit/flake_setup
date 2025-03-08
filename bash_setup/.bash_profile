@@ -92,6 +92,12 @@ flake_modified_prtcl() {
     printf "\n"
 
     flake_rebuild .
+  else
+    printf "\n"
+    printf "=================================================================\n"
+    printf "No changes \n"
+    printf "=================================================================\n"
+    printf "\n"
   fi
 }
 
