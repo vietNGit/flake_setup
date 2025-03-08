@@ -11,7 +11,7 @@ eval "$(oh-my-posh init bash --config ~/flake_setup/omp/personal.omp.yaml)"
 focus_print() {
   printf "\n"
   printf "=================================================================\n"
-  printf $1
+  printf "$1"
   printf "=================================================================\n"
   printf "\n"
 }
@@ -85,11 +85,11 @@ flake_modified_prtcl() {
 flake_system_update() {
   cd ~/flake_setup/flakes
 
-  focus_print("This script require sudo priviledge \n")
-  # sudo focus_print "Sudo priviledge granted"
+  focus_print "This script require sudo priviledge \n"
+  sudo focus_print "Sudo priviledge granted"
 
   flake_update
 
-  # bash_modified_prtcl
-  # flake_modified_prtcl
+  bash_modified_prtcl
+  flake_modified_prtcl
 }
