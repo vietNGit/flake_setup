@@ -72,7 +72,7 @@ flake_modified_prtcl() {
     $need_update = true
   fi
 
-  if [ "$need_update" = true ]
+  if [[ "$need_update" = true ]]
   then
     focus_print "Rebuild system \n"
 
