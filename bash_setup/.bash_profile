@@ -8,6 +8,93 @@ eval "$(oh-my-posh init bash --config ~/flake_setup/omp/personal.omp.yaml)"
 
 # PS1='${_RESET}${_BOLD}${_CYAN}\D{%d-%m-%y} ${_RED} \u@\H:\w ${_RESET}\n${_BOLD}${_GREEN}\$${_RESET} '
 
+modified_files() {
+  git status --porcelain | sed s/^...//
+}
+
+get_modified_shell_scripts() {
+  modified_files | grep -e bash -e sh
+}
+
+get_modified_flakes() {
+  modified_files | grep .nix
+}
+
+get_modified_lock() {
+  modified_files | grep .lock
+}
+
+bash_modified_prtcl() {
+  printf "\n"
+    printf "=================================================================\n"
+    printf "Checking if shell scripts modified \n"
+    printf "=================================================================\n"
+    printf "\n"
+  if [[ `get_modified_shell_scripts` ]]
+  then
+    printf "\n"
+    printf "=================================================================\n"
+    printf "Shell script updated, perform git commit \n"
+    printf "=================================================================\n"
+    printf "\n"
+
+    get_modified_shell_scripts | xargs git add
+    git commit -a -m "Update shell script $DATE"
+    git push origin HEAD
+  fi
+}
+
+flake_modified_prtcl() {
+  printf "\n"
+  printf "=================================================================\n"
+  printf "Checking if flakes and lock added or updated \n"
+  printf "=================================================================\n"
+  printf "\n"
+
+  need_update = false
+
+  if [[ `get_modified_flakes` ]]
+  then
+    printf "\n"
+    printf "=================================================================\n"
+    printf "Flakes updated \n"
+    printf "=================================================================\n"
+    printf "\n"
+
+    get_modified_shell_scripts | xargs git add
+    git commit -a -m "Flakes updated or modified $DATE"
+    git push origin HEAD
+
+    $need_update = true
+  fi
+
+  if [[ `get_modified_lock` ]]
+  then
+    printf "\n"
+    printf "=================================================================\n"
+    printf "Lock updated \n"
+    printf "=================================================================\n"
+    printf "\n"
+
+    get_modified_lock | xargs git add
+    git commit -a -m "Lock updated $DATE"
+    git push origin HEAD
+
+    $need_update = true
+  fi
+
+  if [[ `$need_update` ]]
+  then
+    printf "\n"
+    printf "=================================================================\n"
+    printf "Rebuild system \n"
+    printf "=================================================================\n"
+    printf "\n"
+
+    flake_rebuild .
+  fi
+}
+
 flake_system_update() {
   cd ~/flake_setup/flakes
 
@@ -15,32 +102,7 @@ flake_system_update() {
   sudo echo "Sudo priviledge granted"
 
   flake_update
-  if [[ `git status --porcelain | grep lock` ]]
-  then
-    printf "\n"
-    printf "=================================================================\n"
-    printf "Lock updated, perform git commit and flake system rebuild \n"
-    printf "=================================================================\n"
-    printf "\n"
-    git add .
-    git commit -a -m "Update lock $DATE"
-    git push origin HEAD
-    flake_rebuild .
-  elif [[ `git status --porcelain | grep -e bash -e sh` ]]
-  then
-    printf "\n"
-    printf "=================================================================\n"
-    printf "Shell script updated, perform git commit \n"
-    printf "=================================================================\n"
-    printf "\n"
-    git add .
-    git commit -a -m "Update shell script $DATE"
-    git push origin HEAD
-  else
-    printf "\n"
-    printf "=================================================================\n"
-    printf "No changes \n"
-    printf "=================================================================\n"
-    printf "\n"
-  fi
+
+  bash_modified_prtcl
+  flake_modified_prtcl
 }
