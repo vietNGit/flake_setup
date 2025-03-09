@@ -94,4 +94,6 @@ flake_system_update() {
 
   bash_modified_prtcl
   flake_modified_prtcl
+
+  flatpak update -y
 }
