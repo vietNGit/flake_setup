@@ -26,9 +26,11 @@
       cowsay
       fastfetch
 
-      vim
       kitty
       warp-terminal
+      ghostty
+
+      vim
       tree
       htop
       clinfo
