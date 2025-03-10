@@ -22,7 +22,7 @@ commit_push() {
 }
 
 modified_files() {
-  git status --short | sed s/^...//
+  git status --porcelain | sed s/^...//
 }
 
 get_modified_shell_scripts() {
@@ -48,6 +48,7 @@ bash_modified_prtcl() {
     commit_push "Update shell script $DATE"
   fi
 }
+
 
 flake_modified_prtcl() {
   focus_print "Checking if flakes and lock added or updated \n"
@@ -76,6 +77,7 @@ flake_modified_prtcl() {
 
   if [[ "$need_update" = true ]]
   then
+    cd ~/flake_setup/flakes
     focus_print "Rebuild system \n"
 
     flake_rebuild .
@@ -91,6 +93,8 @@ flake_system_update() {
   sudo echo "Sudo priviledge granted"
 
   flake_update
+
+  cd ~/flake_setup
 
   bash_modified_prtcl
   flake_modified_prtcl
