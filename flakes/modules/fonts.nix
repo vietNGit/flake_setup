@@ -4,7 +4,7 @@
   fonts = {
     enableDefaultPackages = true;
     packages = with pkgs; [
-      nerdfonts.Meslo
+      nerd-fonts.Meslo
     ];
   };
 }
