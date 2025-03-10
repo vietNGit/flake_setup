@@ -39,7 +39,6 @@
 
       vesktop
 
-      kate
       git
       direnv
       remmina

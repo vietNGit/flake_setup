@@ -50,6 +50,7 @@
     knotifyconfig
     wrapQtAppsHook
     skanpage
+    kate
     # fcitx5-with-addons
   ];
 }
