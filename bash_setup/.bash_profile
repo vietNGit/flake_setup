@@ -59,7 +59,7 @@ flake_modified_prtcl() {
   then
     focus_print "Flakes updated \n"
 
-    get_modified_shell_scripts | xargs git add
+    get_modified_flakes | xargs git add
     commit_push "Flakes updated or modified $DATE"
 
     need_update=true
