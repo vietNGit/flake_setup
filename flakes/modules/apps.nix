@@ -73,6 +73,7 @@
       affine
       libreoffice
       wpsoffice
+      onlyoffice-desktopeditors
 
       dnf5
       dnf-plugins-core
