@@ -1,4 +1,4 @@
-{ config, pkgs, ibus-pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
   # Enable the X11 windowing system.
@@ -33,7 +33,6 @@
     fcitx5 = {
       addons = with pkgs; [ fcitx5-bamboo ];
     };
-    # ibus.engines = with ibus-pkgs.ibus-engines; [ bamboo libpinyin ];
   };
 
   environment.systemPackages = with pkgs.kdePackages; [

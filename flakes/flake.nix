@@ -5,7 +5,6 @@
 		nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 		# nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
 		# nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-24.11";
-		ibus.url = "github:NixOS/nixpkgs/nixos-24.05";
 	};
 
 	outputs = { self, nixpkgs, ibus, ... }@inputs :
@@ -39,14 +38,6 @@
 		# 		allowUnfreePredicate = (_: true);
 		# 	};
 		# };
-
-		ibus-pkgs = import inputs.ibus {
-			system = systemSettings.system;
-			config = {
-				allowUnfree = true;
-				allowUnfreePredicate = (_: true);
-			};
-		};
 	in {
 		nixosConfigurations = {
 			nixosLaptop = nixpkgs.lib.nixosSystem rec {
@@ -56,7 +47,6 @@
 					# pass config variables from above
 					inherit pkgs;
 					# inherit pkgs-stable;
-					inherit ibus-pkgs;
 
 					inherit systemSettings;
 					inherit inputs;

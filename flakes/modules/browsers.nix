@@ -1,4 +1,4 @@
-{ config, pkgs, ibus-pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
   environment.systemPackages = with pkgs; [
