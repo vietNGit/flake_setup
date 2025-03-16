@@ -14,6 +14,9 @@
         enable = true;
         package = pkgs.mullvad-vpn;
       };
+
+      # Bios update service
+      fwupd.enable = true;
     };
 
     systemd.packages = [ pkgs.cloudflare-warp ]; # for warp-cli
