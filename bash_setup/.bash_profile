@@ -82,7 +82,7 @@ flake_modified_prtcl() {
 
     flake_rebuild .
   else
-    focus_print "No changes \n"
+    focus_print "No rebuild needed \n"
   fi
 }
 
