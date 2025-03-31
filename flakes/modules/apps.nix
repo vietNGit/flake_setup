@@ -41,6 +41,7 @@
       bat
 
       vesktop
+      bitwarden-desktop
 
       git
       direnv
