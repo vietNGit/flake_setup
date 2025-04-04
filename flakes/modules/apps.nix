@@ -64,6 +64,7 @@
       ddcutil
       fan2go
       lm_sensors
+      easyeffects
 
       qemu_full
       quickemu
