@@ -39,6 +39,7 @@
       clinfo
       grub2
       bat
+      efibootmgr
 
       vesktop
       bitwarden-desktop
