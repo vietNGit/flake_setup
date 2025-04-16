@@ -80,7 +80,7 @@
 
   # Enable networking
   networking = {
-    # wireless.enable = true;
+    wireless.enable = true;
     networkmanager = {
       enable = true;
       plugins = with pkgs; [
