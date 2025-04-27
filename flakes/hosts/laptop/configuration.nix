@@ -81,10 +81,10 @@
 
   # Enable networking
   networking = {
-    wireless = {
-      enable = false;
-      userControlled.enable = true;
-    };
+    # wireless = {
+    #   enable = false;
+    #   userControlled.enable = true;
+    # };
     networkmanager = {
       enable = true;
       plugins = with pkgs; [
