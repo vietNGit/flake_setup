@@ -67,12 +67,6 @@
       lm_sensors
       easyeffects
 
-      qemu_full
-      quickemu
-      virt-manager
-      virtualbox
-      distrobox
-
       zoom-us
       vlc
       appflowy
