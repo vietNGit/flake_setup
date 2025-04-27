@@ -4,7 +4,7 @@
   virtualisation = {
     libvirtd = {
       enable = true;
-      qemu.package = pkgs.qemu_full;
+      # qemu.package = pkgs.qemu_full;
     };
     # virtualbox = {
     #   host = {
@@ -13,7 +13,7 @@
     #   };
     #   guest.enable = true;
     # };
-    qemu.package = pkgs.qemu_full;
+    # qemu.package = pkgs.qemu_full;
   };
 
   services.qemuGuest.enable = true;
@@ -21,6 +21,7 @@
   programs.virt-manager.enable = true;
 
   environment.systemPackages = with pkgs; [
+    qemu_full
     quickemu
     distrobox
   ];
