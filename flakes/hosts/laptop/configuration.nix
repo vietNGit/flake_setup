@@ -95,6 +95,7 @@
 
   # Set your time zone.
   services.automatic-timezoned.enable = true;
+  services.localtimed.enable = true;
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_AU.UTF-8";
