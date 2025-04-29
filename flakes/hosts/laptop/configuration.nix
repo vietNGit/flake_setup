@@ -94,7 +94,12 @@
   };
 
   # Set your time zone.
-  services.automatic-timezoned.enable = true;
+  services = {
+    automatic-timezoned = {
+      enable = true;
+      package = pkgs.automatic-timezoned;
+    };
+  };
   services.localtimed.enable = true;
 
   # Select internationalisation properties.
