@@ -23,6 +23,14 @@
     };
 
     desktopManager.plasma6.enable = true;
+
+    # Enable automatic login for the user.
+    displayManager = {
+      autoLogin = {
+        enable = false;
+        # user = "viet";
+      };
+    };
   };
 
   # Vietnamese typing setup
