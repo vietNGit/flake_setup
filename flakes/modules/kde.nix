@@ -49,6 +49,7 @@
     kpat
     kcalendarcore
     kamera
+    kamoso
     networkmanager-qt
     plasma-pa
     plasma-firewall
