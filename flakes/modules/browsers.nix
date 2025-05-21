@@ -6,7 +6,6 @@
     google-chrome
     vivaldi
     vivaldi-ffmpeg-codecs
-    microsoft-edge
 
     firefox
     mullvad-browser
