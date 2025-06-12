@@ -45,6 +45,7 @@
       bitwarden-desktop
 
       git
+      github-desktop
       direnv
       remmina
       cloudflare-warp
