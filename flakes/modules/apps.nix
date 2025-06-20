@@ -40,6 +40,7 @@
       grub2
       bat
       efibootmgr
+      btop
 
       vesktop
       bitwarden-desktop
