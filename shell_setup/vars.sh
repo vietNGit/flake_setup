@@ -27,7 +27,6 @@ _RESET=$(tput sgr0)
 _CHOSEN_BG=$(tput setab 241)
 
 export DATE=$(date);
-export FLAKE_INGRESS_PATH="$HOME/GitProjs/GitHub/vietNGit/flake_setup/flakes";
 
 # ==============================================================================
 

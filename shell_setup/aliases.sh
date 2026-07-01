@@ -36,8 +36,8 @@ command -v nvim >/dev/null 2>&1 && alias vi=nvim
 
 # Nix Darwin specific aliases ==================================================
 
-alias home_manager_switch="nix run home-manager switch --flake $FLAKE_INGRESS_PATH#macbookPro14"
-alias darwin_flake_update="nix flake update --flake $FLAKE_INGRESS_PATH" # TODO: Rebuild this to use the flake path from the config file instead of hardcoding it
-alias rebuild_darwin="sudo darwin-rebuild switch --flake $FLAKE_INGRESS_PATH#macbookPro14"
+alias home_manager_switch="nix run home-manager switch --flake $FLAKE_PROJECT_ROOT/flakes#macbookPro14"
+alias darwin_flake_update="nix flake update --flake $FLAKE_PROJECT_ROOT/flakes" # TODO: Rebuild this to use the flake path from the config file instead of hardcoding it
+alias rebuild_darwin="sudo darwin-rebuild switch --flake $FLAKE_PROJECT_ROOT/flakes#macbookPro14"
 
 # ==============================================================================
