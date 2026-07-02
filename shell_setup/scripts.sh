@@ -40,10 +40,20 @@ shell_scripts_modified_prtcl() {
 }
 
 rebuild_flake_system_prctl() {
-  focus_print "Rebuild system \n"
-
-  # TODO: add a check to see if current system is darwin or nixos and run the appropriate commands
-  rebuild_darwin
+  case "$(uname -s)" in
+    Linux)
+      focus_print "Rebuild NixOS system \n"
+      rebuild_nixos
+      ;;
+    Darwin)
+      focus_print "Rebuild Darwin system \n"
+      rebuild_darwin
+      ;;
+    *)
+      echo "FATAL: Unrecognized system: $(uname -s)"
+      exit 1
+      ;;
+  esac
 }
 
 flake_modified_prtcl() {
@@ -86,11 +96,13 @@ flake_system_update() {
   sudo echo "Sudo priviledge granted"
 
   # Perform flake pkgs update
-  # TODO: add a check to see if current system is darwin or nixos and run the appropriate commands
-  darwin_flake_update
+  update_flake_lock
 
   shell_scripts_modified_prtcl
   flake_modified_prtcl
 
+  # System specific update, although flatpak can be a module within nixos it self, might be removed in the future
   command -v flatpak >/dev/null 2>&1 && flatpak update -y
 }
+
+alias fsu="flake_system_update"
