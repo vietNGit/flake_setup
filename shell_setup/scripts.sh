@@ -7,7 +7,7 @@ focus_print() {
 }
 
 commit_push() {
-  git commit -m "$1"
+  git commit -S -m "$1"
   git push origin HEAD
 }
 
