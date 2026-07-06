@@ -90,8 +90,6 @@ flake_modified_prtcl() {
 }
 
 flake_system_update() {
-  cd $FLAKE_PROJECT_ROOT
-
   focus_print "This script require sudo priviledge \n"
   sudo echo "Sudo priviledge granted"
 
