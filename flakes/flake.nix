@@ -139,6 +139,12 @@
 
       # system.applications.enable = true;
 
+      # Temp fix, see ref:
+      # https://github.com/nix-darwin/nix-darwin/issues/1817#issuecomment-4887465960
+      documentation.enable = false;
+      system.tools.darwin-uninstaller.enable = false;
+      # ========================================================================
+
       nix.gc = {
         # 1. Enable automated garbage collection
         automatic = true;
