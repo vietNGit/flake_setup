@@ -90,6 +90,9 @@ flake_modified_prtcl() {
 }
 
 flake_system_update() {
+  CURRENT_DIR=$(pwd)
+  cd $FLAKE_PROJECT_ROOT
+
   focus_print "This script require sudo priviledge \n"
   sudo echo "Sudo priviledge granted"
 
@@ -101,6 +104,8 @@ flake_system_update() {
 
   # System specific update, although flatpak can be a module within nixos it self, might be removed in the future
   command -v flatpak >/dev/null 2>&1 && flatpak update -y
+
+  cd $CURRENT_DIR
 }
 
 alias fsu="flake_system_update"
