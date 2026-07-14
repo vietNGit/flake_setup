@@ -97,6 +97,8 @@
           "proton-mail"
           "protonvpn"
           "proton-pass"
+
+          "cloudflare-warp"
         ];
         onActivation= {
           cleanup = "zap";
