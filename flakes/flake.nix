@@ -75,7 +75,6 @@
           "discord"
           "notion"
           "steam"
-          "battle-net"
           "raycast"
           "duplicati"
 
