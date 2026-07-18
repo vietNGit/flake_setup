@@ -25,7 +25,7 @@
 
       settings = {
         theme = "Catppuccin Frappe";
-        font-size = 16;
+        font-size = 15;
         font-family = "MesloLGM Nerd Font Mono";
       };
     };
