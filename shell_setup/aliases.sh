@@ -42,5 +42,7 @@ command -v nvim >/dev/null 2>&1 && alias vi=nvim
 alias home_manager_switch="nix run home-manager switch --flake $FLAKE_PROJECT_ROOT/flakes#macbookPro14"
 alias darwin_flake_update="nix flake update --flake $FLAKE_PROJECT_ROOT/flakes" # Deprecated, use update_flake_lock instead
 alias rebuild_darwin="sudo darwin-rebuild switch --flake $FLAKE_PROJECT_ROOT/flakes#macbookPro14"
+alias rebuild_darwin_check="sudo darwin-rebuild check --flake $FLAKE_PROJECT_ROOT/flakes#macbookPro14"
+alias bsu="brew update -f && brew upgrade --greedy && brew cleanup --prune=all && brew autoremove"
 
 # ==============================================================================

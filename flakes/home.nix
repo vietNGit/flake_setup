@@ -1,10 +1,10 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
-  home.username = "vietmacbook";
-  home.homeDirectory = "/Users/vietmacbook";
+  # home.username = config.custom.users.viet.username;
+  # home.homeDirectory = "/Users/${config.custom.users.viet.username}";
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
