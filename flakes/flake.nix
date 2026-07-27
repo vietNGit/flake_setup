@@ -10,39 +10,47 @@
     nix-homebrew.url = "github:zhaofengli/nix-homebrew";
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs, nix-homebrew, home-manager, ... }:
-  {
-    # Build darwin flake using:
-    # $ darwin-rebuild build --flake .#macbookPro14
-    darwinConfigurations."macbookPro14" = nix-darwin.lib.darwinSystem {
-      specialArgs = { inherit self; };
-      modules = [
-        nix-homebrew.darwinModules.nix-homebrew
-        home-manager.darwinModules.home-manager
+  outputs =
+    inputs@{
+      self,
+      nix-darwin,
+      nixpkgs,
+      nix-homebrew,
+      home-manager,
+      ...
+    }:
+    {
+      # Build darwin flake using:
+      # $ darwin-rebuild build --flake .#macbookPro14
+      darwinConfigurations."macbookPro14" = nix-darwin.lib.darwinSystem {
+        specialArgs = { inherit self; };
+        modules = [
+          nix-homebrew.darwinModules.nix-homebrew
+          home-manager.darwinModules.home-manager
 
-        ({ config, ... }: {
-          nixpkgs = {
-            config.allowUnfree = true;
-            hostPlatform = "aarch64-darwin";
-          };
-        })
+          ({ config, ... }: {
+            nixpkgs = {
+              config.allowUnfree = true;
+              hostPlatform = "aarch64-darwin";
+            };
+          })
 
-        ./schemas/user-schema.nix
+          ./schemas/user-schema.nix
 
-        ./hosts/macbook/darwin-configuration.nix
-        ./hosts/macbook/user.nix
+          ./hosts/macbook/darwin-configuration.nix
+          ./hosts/macbook/user.nix
 
-        ./modules/common/fonts.nix
+          ./modules/common/fonts.nix
 
-        ./modules/mac_specific/apps.nix
-        ./modules/mac_specific/homebrew.nix
-        ({ config, ... }: {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.extraSpecialArgs = { inherit inputs; };
-          home-manager.users.${config.custom.users.viet.username} = ./home.nix;
-        })
-      ];
+          ./modules/mac_specific/apps.nix
+          ./modules/mac_specific/homebrew.nix
+          ({ config, ... }: {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.extraSpecialArgs = { inherit inputs; };
+            home-manager.users.${config.custom.users.viet.username} = ./home.nix;
+          })
+        ];
+      };
     };
-  };
 }

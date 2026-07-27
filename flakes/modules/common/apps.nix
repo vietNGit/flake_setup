@@ -12,6 +12,7 @@
     tmux
     zoxide
     btop
+    nixfmt
 
     fd
     ripgrep

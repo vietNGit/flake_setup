@@ -64,7 +64,6 @@
     };
   };
 
-
   system.activationScripts.homebrew.text = lib.mkAfter ''
     if [ -x "${config.homebrew.prefix}/bin/brew" ]; then
       brew="${config.homebrew.prefix}/bin/brew"
