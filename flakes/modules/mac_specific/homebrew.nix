@@ -1,4 +1,4 @@
-{config, ... }:
+{ config, lib, ... }:
 
 {
   nix-homebrew = {
@@ -63,4 +63,17 @@
       upgrade = true;
     };
   };
+
+
+  system.activationScripts.homebrew.text = lib.mkAfter ''
+    if [ -x "${config.homebrew.prefix}/bin/brew" ]; then
+      brew="${config.homebrew.prefix}/bin/brew"
+
+      echo ""
+      echo "Running custom post-activation Homebrew cleanup..."
+      sudo --user=${config.homebrew.user} --set-home "$brew" cleanup --prune=all
+      sudo --user=${config.homebrew.user} --set-home "$brew" autoremove
+      echo ""
+    fi
+  '';
 }

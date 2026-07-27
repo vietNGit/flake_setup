@@ -11,14 +11,6 @@
   };
 
   outputs = inputs@{ self, nix-darwin, nixpkgs, nix-homebrew, home-manager, ... }:
-  let
-    configuration = { pkgs, config, ... }: {
-      nixpkgs.config.allowUnfree = true;
-
-      # The platform the configuration will be used on.
-      nixpkgs.hostPlatform = "aarch64-darwin";
-    };
-  in
   {
     # Build darwin flake using:
     # $ darwin-rebuild build --flake .#macbookPro14
@@ -27,7 +19,14 @@
       modules = [
         nix-homebrew.darwinModules.nix-homebrew
         home-manager.darwinModules.home-manager
-        configuration
+
+        ({ config, ... }: {
+          nixpkgs = {
+            config.allowUnfree = true;
+            hostPlatform = "aarch64-darwin";
+          };
+        })
+
         ./schemas/user-schema.nix
 
         ./hosts/macbook/darwin-configuration.nix
