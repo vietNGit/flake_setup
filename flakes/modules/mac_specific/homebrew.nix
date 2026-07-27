@@ -51,7 +51,6 @@
       "macs-fan-control"
       "stats"
 
-      "proton-mail-bridge"
       "proton-mail"
       "protonvpn"
       "proton-pass"

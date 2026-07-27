@@ -36,12 +36,6 @@
   };
 
   system = {
-    activationScripts.applications.text = ''
-      echo ""
-      echo "skipping application linking..."
-      echo ""
-    '';
-
     # Set Git commit hash for darwin-version.
     configurationRevision = self.rev or self.dirtyRev or null;
 
