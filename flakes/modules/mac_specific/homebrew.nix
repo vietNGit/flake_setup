@@ -44,10 +44,8 @@
       "wpsoffice"
 
       "betterdisplay"
-      "alt-tab"
       "logi-options+"
       "rectangle"
-      "middleclick"
       "macs-fan-control"
       "stats"
 

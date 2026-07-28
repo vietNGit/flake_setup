@@ -11,6 +11,11 @@
     echo ""
   '';
 
+  environment.systemPackages = with pkgs; [
+    alt-tab-macos
+    middleclick
+  ];
+
   environment.interactiveShellInit = ''
     SOURCE_FILE_PATH="$HOME/GitProjs/GitHub/vietNGit/flake_setup/shell_setup/profile.sh"
 
