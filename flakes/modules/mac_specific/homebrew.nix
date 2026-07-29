@@ -22,31 +22,27 @@
     #   Bitwarden = 1352778147;
     # };
     brews = [
-      "mas"
+      # "mas"
     ];
     casks = [
-      "google-chrome"
+      # "google-chrome"
+      "firefox"
       "zen"
 
       # "bitwarden"
       "discord"
-      "notion"
       "steam"
-      "raycast"
       "duplicati"
 
       "ghostty"
       "kate"
       "visual-studio-code"
-      "orbstack"
 
       "wpsoffice"
 
-      "betterdisplay"
       "logi-options+"
-      "rectangle"
+
       "macs-fan-control"
-      "stats"
 
       "proton-mail"
       "protonvpn"
@@ -54,6 +50,7 @@
 
       "cloudflare-warp"
     ];
+    global.autoUpdate = true;
     onActivation = {
       cleanup = "zap";
       autoUpdate = true;

@@ -14,6 +14,17 @@
   environment.systemPackages = with pkgs; [
     alt-tab-macos
     middleclick
+    betterdisplay
+    rectangle
+    stats
+    raycast
+
+    orbstack
+
+    notion-app
+
+    google-chrome
+    # firefox
   ];
 
   environment.interactiveShellInit = ''
