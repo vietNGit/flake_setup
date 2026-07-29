@@ -42,6 +42,7 @@
 
       "logi-options+"
 
+      "stats"
       "macs-fan-control"
 
       "proton-mail"

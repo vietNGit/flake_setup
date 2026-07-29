@@ -16,7 +16,7 @@
     middleclick
     betterdisplay
     rectangle
-    stats
+    # stats
     raycast
 
     orbstack
