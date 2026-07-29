@@ -26,7 +26,6 @@
     ];
     casks = [
       "google-chrome"
-      "firefox"
       "zen"
 
       # "bitwarden"
