@@ -25,7 +25,6 @@
       # "mas"
     ];
     casks = [
-      # "google-chrome"
       "firefox"
       "zen"
 
@@ -53,7 +52,7 @@
     ];
     global.autoUpdate = true;
     onActivation = {
-      cleanup = "zap";
+      cleanup = "uninstall";
       autoUpdate = true;
       upgrade = true;
     };
