@@ -22,7 +22,7 @@
 
     # Duplicati breaks on Apple Silicon, so it is disabled for now.
     # duplicati
-    obsidian
+    # obsidian
     brave
   ];
 }
