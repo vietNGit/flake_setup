@@ -12,8 +12,6 @@
   '';
 
   environment.systemPackages = with pkgs; [
-    alt-tab-macos
-    middleclick
     betterdisplay
     rectangle
     # stats
