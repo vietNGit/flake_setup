@@ -20,6 +20,7 @@ alias nix_full_update="echo 'Update channel and upgrade packages' && sudo nix-ch
 alias flake_update="nix flake update" # Deprecated, use update_flake_lock instead
 # TODO: Add config name, see rebuild_darwin for example
 alias rebuild_nixos="sudo nixos-rebuild switch --flake $FLAKE_PROJECT_ROOT/flakes"
+alias rebuild_nixos_check="sudo nixos-rebuild check --flake $FLAKE_PROJECT_ROOT/flakes"
 
 # ==============================================================================
 
