@@ -78,6 +78,8 @@ shell_scripts_modified_prtcl() {
     get_modified_shell_scripts | xargs git add
     commit_push "Update shell script $DATE"
   fi
+
+  return 0
 }
 
 rebuild_flake_system_prctl() {
@@ -167,13 +169,11 @@ flake_modified_prtcl() {
     rebuild_flake_system_prctl
 
     focus_print -s "System rebuilt successfully"
-
-    return 0
   else
     focus_print -s "No rebuild needed"
-
-    return 0
   fi
+
+  return 0
 }
 
 flake_system_update() {
