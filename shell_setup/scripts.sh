@@ -167,8 +167,12 @@ flake_modified_prtcl() {
     rebuild_flake_system_prctl
 
     focus_print -s "System rebuilt successfully"
+
+    return 0
   else
     focus_print -s "No rebuild needed"
+
+    return 0
   fi
 }
 
