@@ -136,6 +136,7 @@ flake_modified_prtcl() {
       focus_print -e "Rebuild system check failed, aborting"
       return 1
     fi
+    focus_print -s "Check passed, commit and push changes"
 
     commit_push "Flakes updated or modified $DATE"
 
@@ -153,6 +154,8 @@ flake_modified_prtcl() {
       focus_print -e "Rebuild system check failed, aborting"
       return 1
     fi
+
+    focus_print -s "Check passed, commit and push changes"
 
     commit_push "Lock updated $DATE"
 
