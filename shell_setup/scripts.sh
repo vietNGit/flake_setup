@@ -193,6 +193,7 @@ flake_system_update() {
   command -v flatpak >/dev/null 2>&1 && flatpak update -y
 
   # cd $CURRENT_DIR
+  return 0
 }
 
 alias fsu="flake_system_update"
