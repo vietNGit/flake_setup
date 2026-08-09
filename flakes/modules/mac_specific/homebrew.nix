@@ -43,6 +43,7 @@
 
       "stats"
       "macs-fan-control"
+      "vorssaint"
 
       "proton-mail"
       "protonvpn"
