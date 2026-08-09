@@ -38,7 +38,7 @@ focus_print() {
   if [ -n "$COLOR" ]; then
     printf "%s=================================================================\n" "$COLOR"
     printf "%s\n" "$MESSAGE"
-    printf "=================================================================%s\n" "$_NC"
+    printf "=================================================================%s\n" "$_RESET"
   else
     printf "=================================================================\n"
     printf "%s\n" "$MESSAGE"
@@ -69,11 +69,11 @@ get_modified_lock() {
 }
 
 shell_scripts_modified_prtcl() {
-  focus_print "Checking if shell scripts modified \n"
+  focus_print "Checking if shell scripts modified"
 
   if [[ `get_modified_shell_scripts` ]]
   then
-    focus_print -i "Shell script updated, perform git commit \n"
+    focus_print -i "Shell script updated, perform git commit"
 
     get_modified_shell_scripts | xargs git add
     commit_push "Update shell script $DATE"
@@ -85,15 +85,15 @@ rebuild_flake_system_prctl() {
     Linux)
       case "$1" in
         --check)
-          focus_print -i "Checking NixOS system \n"
+          focus_print -i "Checking NixOS system"
           rebuild_nixos_check
           ;;
         -c)
-          focus_print -i "Checking NixOS system \n"
+          focus_print -i "Checking NixOS system"
           rebuild_nixos_check
           ;;
         *)
-          focus_print -i "Rebuild NixOS system \n"
+          focus_print -i "Rebuild NixOS system"
           rebuild_nixos
           ;;
       esac
@@ -101,15 +101,15 @@ rebuild_flake_system_prctl() {
     Darwin)
       case "$1" in
         --check)
-          focus_print -i "Checking Darwin system \n"
+          focus_print -i "Checking Darwin system"
           rebuild_darwin_check
           ;;
         -c)
-          focus_print -i "Checking Darwin system \n"
+          focus_print -i "Checking Darwin system"
           rebuild_darwin_check
           ;;
         *)
-          focus_print -i "Rebuild Darwin system \n"
+          focus_print -i "Rebuild Darwin system"
           rebuild_darwin
           ;;
       esac
@@ -122,18 +122,18 @@ rebuild_flake_system_prctl() {
 }
 
 flake_modified_prtcl() {
-  focus_print "Checking if flakes and lock added or updated \n"
+  focus_print "Checking if flakes and lock added or updated"
 
   need_update=false
 
   if [[ `get_modified_flakes` ]]
   then
-    focus_print -i "Flakes updated \n"
+    focus_print -i "Flakes updated"
 
     get_modified_flakes | xargs git add
 
     if ! rebuild_flake_system_prctl --check; then
-      focus_print -e "Rebuild system check failed, aborting \n"
+      focus_print -e "Rebuild system check failed, aborting"
       return 1
     fi
 
@@ -145,12 +145,12 @@ flake_modified_prtcl() {
   update_flake_lock
   if [[ `get_modified_lock` ]]
   then
-    focus_print -i "Lock updated \n"
+    focus_print -i "Lock updated"
 
     get_modified_lock | xargs git add
 
     if ! rebuild_flake_system_prctl --check; then
-      focus_print -e "Rebuild system check failed, aborting \n"
+      focus_print -e "Rebuild system check failed, aborting"
       return 1
     fi
 
@@ -163,22 +163,21 @@ flake_modified_prtcl() {
   then
     rebuild_flake_system_prctl
 
-    focus_print -s "System rebuilt successfully \n"
+    focus_print -s "System rebuilt successfully"
   else
-    focus_print -s "No rebuild needed \n"
+    focus_print -s "No rebuild needed"
   fi
 }
 
 flake_system_update() {
   # CURRENT_DIR=$(pwd)
-  focus_print "Moving to flake project root: $FLAKE_PROJECT_ROOT \n"
+  focus_print "Moving to flake project root: $FLAKE_PROJECT_ROOT"
   cd $FLAKE_PROJECT_ROOT
 
-  focus_print "This script require sudo priviledge \n"
-  sudo echo "Sudo priviledge granted"
+  focus_print -w "This script require sudo priviledge"
+  sudo -v || { focus_print -e "Failed to obtain sudo privileges"; return 1; }
 
-  # Perform flake pkgs update
-  update_flake_lock
+  focus_print -s "Sudo privileges granted"
 
   shell_scripts_modified_prtcl
   flake_modified_prtcl
