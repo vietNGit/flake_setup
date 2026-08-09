@@ -71,7 +71,7 @@ get_modified_lock() {
 shell_scripts_modified_prtcl() {
   focus_print "Checking if shell scripts modified"
 
-  if [[ `get_modified_shell_scripts` ]]
+  if [ -n "$(get_modified_shell_scripts)" ]
   then
     focus_print -i "Shell script updated, perform git commit"
 
@@ -128,7 +128,7 @@ flake_modified_prtcl() {
 
   need_update=false
 
-  if [[ `get_modified_flakes` ]]
+  if [ -n "$(get_modified_flakes)" ]
   then
     focus_print -i "Flakes updated"
 
@@ -146,7 +146,7 @@ flake_modified_prtcl() {
   fi
 
   update_flake_lock
-  if [[ `get_modified_lock` ]]
+  if [ -n "$(get_modified_lock)" ]
   then
     focus_print -i "Lock updated"
 
