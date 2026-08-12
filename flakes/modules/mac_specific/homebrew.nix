@@ -50,6 +50,7 @@
       "proton-pass"
 
       "cloudflare-warp"
+      "kde-connect"
     ];
     global.autoUpdate = true;
     onActivation = {
