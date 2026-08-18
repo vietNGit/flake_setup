@@ -1,6 +1,7 @@
 #!/bin/sh
 
 # Only exception for global declarable vars
+# Load bearing var
 export FLAKE_PROJECT_ROOT="$HOME/GitProjs/GitHub/vietNGit/flake_setup";
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]:-$0}")" && pwd)"
