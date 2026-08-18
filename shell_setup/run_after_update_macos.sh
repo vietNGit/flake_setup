@@ -37,7 +37,19 @@ fi
 echo "profile.sh found, sourcing ..."
 source ./profile.sh
 
-echo "Running darwin-rebuild switch..."
+echo "Running darwin-rebuild switch command:"
+alias rebuild_darwin
+echo ""
+read -p "Proceed? (y/n): " -n 1 -r
+echo ""
+
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+    echo "Proceeding..."
+else
+    echo "Rebuild aborted."
+    exit 1
+fi
+
 rebuild_darwin
 
 exit 0
