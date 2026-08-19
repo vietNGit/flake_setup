@@ -11,5 +11,5 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]:-$0}")" && pwd)"
 [[ -f "$SCRIPT_DIR/aliases.sh" ]] && source "$SCRIPT_DIR/aliases.sh"
 [[ -f "$SCRIPT_DIR/scripts.sh" ]] && source "$SCRIPT_DIR/scripts.sh"
 
-clear
-command -v ff >/dev/null 2>&1 && ff
+# clear
+# command -v ff >/dev/null 2>&1 && ff
