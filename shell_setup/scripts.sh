@@ -181,10 +181,7 @@ flake_system_update() {
   focus_print "Moving to flake project root: $FLAKE_PROJECT_ROOT"
   cd $FLAKE_PROJECT_ROOT
 
-  focus_print -w "This script require sudo priviledge"
-  sudo -v || { focus_print -e "Failed to obtain sudo privileges"; return 1; }
-
-  focus_print -s "Sudo privileges granted"
+  focus_print -w "This script might require sudo priviledge"
 
   shell_scripts_modified_prtcl
   flake_modified_prtcl
