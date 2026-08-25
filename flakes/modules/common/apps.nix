@@ -9,7 +9,7 @@
     bat
     mkalias
     tree
-    # tmux
+    tmux
     zoxide
     btop
     nixfmt
