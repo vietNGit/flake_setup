@@ -51,6 +51,8 @@
 
       "cloudflare-warp"
       "kde-connect"
+
+      "zalo"
     ];
     global.autoUpdate = true;
     onActivation = {
