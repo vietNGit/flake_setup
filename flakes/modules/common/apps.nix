@@ -24,5 +24,7 @@
     # duplicati
     obsidian
     brave
+
+    zoom-us
   ];
 }
