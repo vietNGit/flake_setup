@@ -51,6 +51,7 @@
 
           ./modules/mac_specific/apps.nix
           ./modules/mac_specific/homebrew.nix
+          ./modules/mac_specific/virt-machine.nix
           ({ config, ... }: {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
