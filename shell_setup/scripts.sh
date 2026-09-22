@@ -145,6 +145,7 @@ flake_modified_prtcl() {
     need_update=true
   fi
 
+  focus_print -i "Update lock file"
   update_flake_lock
   if [ -n "$(get_modified_lock)" ]
   then
@@ -162,6 +163,8 @@ flake_modified_prtcl() {
     commit_push "Lock updated $DATE"
 
     need_update=true
+  else
+    focus_print -s "Lock file not updated"
   fi
 
   if [[ "$need_update" = true ]]
