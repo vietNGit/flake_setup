@@ -13,8 +13,6 @@
 
   environment.systemPackages = with pkgs; [
     betterdisplay
-    rectangle
-    # stats
     raycast
 
     orbstack
