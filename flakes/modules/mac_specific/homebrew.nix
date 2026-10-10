@@ -51,6 +51,7 @@
       "cloudflare-warp"
       "kde-connect"
 
+      "vlc"
       "zalo"
     ];
     global.autoUpdate = true;
