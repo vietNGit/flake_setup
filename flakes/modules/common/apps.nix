@@ -23,7 +23,7 @@
     # Duplicati breaks on Apple Silicon, so it is disabled for now.
     # duplicati
     obsidian
-    brave
+    # brave
 
     zoom-us
   ];

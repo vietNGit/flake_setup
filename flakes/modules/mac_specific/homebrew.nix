@@ -27,6 +27,7 @@
     casks = [
       "firefox"
       "zen"
+      "brave-browser"
 
       # "bitwarden"
       "discord"
