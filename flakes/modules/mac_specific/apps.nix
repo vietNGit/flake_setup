@@ -22,7 +22,7 @@
     google-chrome
     # firefox
 
-    lulu
+    # lulu
   ];
 
   environment.interactiveShellInit = ''
