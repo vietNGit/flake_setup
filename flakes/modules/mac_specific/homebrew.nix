@@ -28,6 +28,7 @@
       "firefox"
       "zen"
       "brave-browser"
+      "vivaldi"
 
       # "bitwarden"
       "discord"
