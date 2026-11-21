@@ -27,6 +27,8 @@
         theme = "Catppuccin Frappe";
         font-size = 15;
         font-family = "MesloLGM Nerd Font Mono";
+        background-opacity = 0.7;
+        background-blur = 10;
       };
     };
 
